@@ -1,5 +1,9 @@
 {
   "name": "EasyZoom",
+  "author": {
+    "name": "Ary Rabelo",
+    "url": "www.soprojetos.com.br"
+  },
   "version": "2.3.0",
   "devDependencies": {
     "grunt": "0.4.x",

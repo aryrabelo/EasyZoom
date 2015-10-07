@@ -1,18 +1,18 @@
 module.exports = function(grunt) {
 
-    grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
-        uglify: {
-            options: {
-                banner: [
-                    '/*!',
-                    ' * @name        <%= pkg.name %>',
-                    ' * @author      <%= pkg.author.name %> <<%= pkg.author.url %>>',
-                    ' * @modified    <%= grunt.template.today("dddd, mmmm dS, yyyy") %>',
-                    ' * @version     <%= pkg.version %>',
-                    ' */'
-                ].join('\n')
-            },
+  grunt.initConfig({
+    pkg: grunt.file.readJSON('package.json'),
+    uglify: {
+        options: {
+            banner: [
+                '/*!',
+                ' * @name        <%= pkg.name %>',
+                ' * @author      <%= pkg.author.name %> <<%= pkg.author.url %>>',
+                ' * @modified    <%= grunt.template.today("dddd, mmmm dS, yyyy") %>',
+                ' * @version     <%= pkg.version %>',
+                ' */'
+            ].join('\n')
+        },
             dist: {
                 files: [
                     {

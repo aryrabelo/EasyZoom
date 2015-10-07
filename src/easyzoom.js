@@ -7,10 +7,10 @@
     var defaults = {
 
         // The text to display within the notice box while loading the zoom image.
-        loadingNotice: 'Loading image',
+        loadingNotice: 'Aguarde o zoom...',
 
         // The text to display within the notice box if an error occurs when loading the zoom image.
-        errorNotice: 'The image could not be loaded',
+        errorNotice: 'zoom não disponível',
 
         // The time (in milliseconds) to display the error notice.
         errorDuration: 2500,
@@ -47,7 +47,7 @@
      * @private
      */
     EasyZoom.prototype._init = function() {
-        this.$link   = this.$target.find('a');
+        this.$link   = this.$target.find('img');
         this.$image  = this.$target.find('img');
 
         this.$flyout = $('<div class="easyzoom-flyout" />');
@@ -74,7 +74,7 @@
         var self = this;
 
         if (!this.isReady) {
-            return this._loadImage(this.$link.attr('href'), function() {
+            return this._loadImage(this.$link.attr('data-big'), function() {
                 if (self.isMouseOver || !testMouseOver) {
                     self.show(e);
                 }
@@ -266,7 +266,7 @@
             srcset: $.isArray(srcset) ? srcset.join() : srcset
         });
 
-        this.$link.attr('href', zoomHref);
+        this.$link.attr('data-big', zoomHref);
     };
 
     /**
