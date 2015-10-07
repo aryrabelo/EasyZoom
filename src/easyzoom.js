@@ -245,29 +245,6 @@
         this.opts.onHide.call(this);
     };
 
-    /**
-     * Swap
-     * @param {String} standardSrc
-     * @param {String} zoomHref
-     * @param {String|Array} srcset (Optional)
-     */
-    EasyZoom.prototype.swap = function(standardSrc, zoomHref, srcset) {
-        this.hide();
-        this.isReady = false;
-
-        this.detachNotice && clearTimeout(this.detachNotice);
-
-        this.$notice.parent().length && this.$notice.detach();
-
-        this.$target.removeClass('is-loading is-ready is-error');
-
-        this.$image.attr({
-            src: standardSrc,
-            srcset: $.isArray(srcset) ? srcset.join() : srcset
-        });
-
-        this.$link.attr('data-big', zoomHref);
-    };
 
     /**
      * Teardown
